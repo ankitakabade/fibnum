@@ -1,12 +1,15 @@
-# Program to calculate the sum of first n Fibonacci numbers
+def get_fibonacci_sum(n):
+    """Returns the sum of the first n Fibonacci numbers."""
+    a, b = 0, 1
+    total = 0
 
-n = 10  # <-- You can change this value
+    for _ in range(n):
+        total += a
+        a, b = b, a + b
 
-a, b = 0, 1
-fib_sum = 0
+    return total
 
-for _ in range(n):
-    fib_sum += a
-    a, b = b, a + b
 
-print("Sum of first", n, "Fibonacci numbers is:", fib_sum)
+if __name__ == "__main__":
+    n = 10
+    print(f"Sum of first {n} Fibonacci numbers is: {get_fibonacci_sum(n)}")
